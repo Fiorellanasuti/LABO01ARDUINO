@@ -1,0 +1,61 @@
+//se definen los pines que se van a usar para cada funcion
+int boton[] = {5,6,7,8,9,10};     //pines de botones
+int led[] = {2,3,4};        //pines de leds
+int tonos[] = {262, 330, 392};   //defino los tonos para cada boton
+
+int scoreToWin = 3;         //numero de rondas que el jugador debe superar para ganar
+
+int buzzerPin = 10;           //pin para el buzzer
+
+int valorBoton = 0;        //variable que guarda el valor del boton presionado
+
+void setup(){
+  //se cicla entre los distintos elementos de button y se los define como input
+  for(int i=0; i < sizeof(boton); i++){
+  	pinMode(boton[i], INPUT_PULLUP);
+  }
+
+  //se cicla entre los distintos elementos de led y se los define como output
+  for(int i=0; i < sizeof(led); i++){
+  	pinMode(led[i], OUTPUT);
+  }
+
+  pinMode(buzzerPin, OUTPUT);   //seteo el pin de buzzer a output
+}
+
+void loop(){
+	prenderLED(round(random(0,3)));
+    apagarLEDS();
+  	if(chequeoBoton()==1){
+      prenderLED(2);
+    }
+      
+}
+//prende el led en la posicion del array led que se pasa por parametro
+void prenderLED(int ledAPrender){
+  digitalWrite(led[ledAPrender], HIGH);
+  tone(buzzerPin, tonos[ledAPrender]);
+}
+
+//apaga todos los LEDS
+void apagarLEDS (){
+  //turn all the LEDs off
+  digitalWrite(led[0],LOW);
+  digitalWrite(led[1],LOW);
+  digitalWrite(led[2],LOW);
+  digitalWrite(led[3],LOW);
+  noTone(buzzerPin); //apaga el buzzer
+}
+
+//chequea que boton se presiona
+int chequeoBoton(){
+  valorBoton = 0;
+  while(valorBoton==0){
+    for(int i = 0; i<sizeof(boton); i++){
+      if(digitalRead(boton[i]) == LOW){
+        valorBoton = i;
+      }
+  	}
+  }
+  return valorBoton;
+}
