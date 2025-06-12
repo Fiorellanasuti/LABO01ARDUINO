@@ -11,3 +11,8 @@ Materiales utilizados:
 - 1 buzzer
 - 1 display
 - Cables
+
+
+Ara Alborja, Fiorella Nasuti
+
+LINK DE TINKERCAD: https://www.tinkercad.com/things/dHc98wKH9OU/editel
