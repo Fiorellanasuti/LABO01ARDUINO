@@ -3,16 +3,14 @@ Cuando un LED se enciende, los jugadores deben reaccionar rápidamente y presion
 
 Materiales utilizados:
 - Placa ARDUINO UNO
-- 3 LED (uno verde, uno amarillo y uno azul)
+- 3 LED (uno rojo, uno amarillo y uno azul)
 - 3 resistencias
 - 6 pulsadores (2 por cada led)
-- Un potenciometro (para regular la velocidad del juego)
 - 1 pantalla LCD con módulo I2C
-- 1 buzzer
 - 1 display
 - Cables
 
 
 Ara Alborja, Fiorella Nasuti
 
-LINK DE TINKERCAD: https://www.tinkercad.com/things/dHc98wKH9OU/editel
+LINK DE TINKERCAD: https://www.tinkercad.com/things/a6T8cg5MeWV/editel
